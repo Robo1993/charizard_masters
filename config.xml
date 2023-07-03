@@ -19,7 +19,7 @@
         <version>3.0.1</version>
         <apiVersion>3</apiVersion>
         <description><![CDATA[<strong>LimeSurvey Bootstrap Vanilla Survey Theme</strong><br>A clean and simple base that can be used by developers to create their own Bootstrap based theme.]]></description>
-        <lastUpdate>2023-06-21 11:41</lastUpdate>
+        <lastUpdate>2023-07-03 12:00:50</lastUpdate>
     <extends>vanilla</extends></metadata>
 
     <!--
