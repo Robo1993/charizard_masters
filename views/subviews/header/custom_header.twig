@@ -14,7 +14,9 @@
     If you extend a template, and want to add custom headers (js, css, scripts, meta etc), you'd rather do it here.
 
 #}
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <link rel='stylesheet' href='{{ processString("{TEMPLATEURL}") }}/css/custom.css'>
+<script type="text/javascript" src='{{ processString("{TEMPLATEURL}") }}/scripts/custom.js' class="headScriptTag"></script>
 
 {# Custom logo option #}
 {% if ( aSurveyInfo.options.brandlogo == "on" ) %}

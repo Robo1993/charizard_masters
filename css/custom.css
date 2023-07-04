@@ -6,6 +6,7 @@
     It will be loaded last, so you can override any other property.
     Also, it will never be updated. So if you inheritate a core template and just add here some CSS, you'll still benefit of all the updates
 */
+  @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
   .table-bordered > thead > tr > th {
     border: 1px solid #dadada;
@@ -15,6 +16,10 @@
   }
 
   #mobile-body {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    font-family: roboto;
     width: 100%;
     height: 100%;
     background-color: #fcf;
@@ -33,20 +38,29 @@
   }
 
   #mobile-header {
-    flex: 0 1 8%;
+    flex: 0 1 6rem;
     background-color: #cff;
   }
 
   #mobile-footer {
-    flex: 0 1 8%;
+    flex: 0 1 6rem;
     background-color: #cfc;
   }
 
-  /****
+/*
 -----------------------------------------------------
 Menus
 -----------------------------------------------------
-  */
+*/
+
+  .hamburger-drawer {
+    position: absolute;
+    display: flex;
+    background-color: #fcc;
+    height: 100%;
+    width: 0%;
+    top: 0;
+  }
 
   #hamburger-top {
     width: 100%;
@@ -54,14 +68,38 @@ Menus
     display: flex;
   }
 
+  #hamburger-drawer-top {
+    left: 0;
+  }
+
   #hamburger-bottom {
     width: 100%;
     height: 100%;
     display: none;
+    flex-flow: row;
+    justify-content: end;
+  }
+
+  #hamburger-drawer-bottom {
+    right: 0%;
+  }
+
+  .hamburger-menu-anchor {
+    width: 6rem;
+    background-color: #fff;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.7rem;
+  }
+
+  .hamburger-menu-anchor svg {
+    transform: scale(2);
   }
 
   #bottom-bar {
-    
+    display: flex;
   }
 
   .bottom-bar {
@@ -74,4 +112,16 @@ Menus
   .bottom-bar-item {
     background-color: #fcc;
     width: inherit;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: .7rem;
   }
+
+/*
+-----------------------------------------------------
+Animations
+-----------------------------------------------------
+*/
