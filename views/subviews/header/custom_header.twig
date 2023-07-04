@@ -14,6 +14,7 @@
     If you extend a template, and want to add custom headers (js, css, scripts, meta etc), you'd rather do it here.
 
 #}
+<link rel='stylesheet' href='{{ processString("{TEMPLATEURL}") }}/css/custom.css'>
 
 {# Custom logo option #}
 {% if ( aSurveyInfo.options.brandlogo == "on" ) %}

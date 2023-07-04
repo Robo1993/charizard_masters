@@ -1,0 +1,77 @@
+/******************
+    User custom CSS
+    ---------------
+
+    In this file you can add your own custom CSS
+    It will be loaded last, so you can override any other property.
+    Also, it will never be updated. So if you inheritate a core template and just add here some CSS, you'll still benefit of all the updates
+*/
+
+  .table-bordered > thead > tr > th {
+    border: 1px solid #dadada;
+  }
+  .table-bordered > thead > tr > td {
+    border: 1px solid #dadada;
+  }
+
+  #mobile-body {
+    width: 100%;
+    height: 100%;
+    background-color: #fcf;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999999999;
+
+    display: flex;
+    flex-flow: column;
+  }
+
+  #mobile-content {
+    flex: 1 1 auto;
+    background-color: #ffc;
+  }
+
+  #mobile-header {
+    flex: 0 1 8%;
+    background-color: #cff;
+  }
+
+  #mobile-footer {
+    flex: 0 1 8%;
+    background-color: #cfc;
+  }
+
+  /****
+-----------------------------------------------------
+Menus
+-----------------------------------------------------
+  */
+
+  #hamburger-top {
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+
+  #hamburger-bottom {
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+  #bottom-bar {
+    
+  }
+
+  .bottom-bar {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .bottom-bar-item {
+    background-color: #fcc;
+    width: inherit;
+  }
