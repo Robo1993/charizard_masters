@@ -23,26 +23,36 @@ $(document).on('ready pjax:scriptcomplete',function(){
     $("#hamburger-anchor-top").on("click", function() {
         $(this).css("background-color", "#ccc");
         openNav("#hamburger-drawer-top");
+        $("#mobile-transparent-background").css("display", "block");
         //$("#hamburger-drawer-top").addClass("drawer-left-animation");
     });
 
     $("#hamburger-anchor-bottom").on("click", function() {
         $(this).css("background-color", "#ccc");
         openNav("#hamburger-drawer-bottom");
+        $("#mobile-transparent-background").css("display", "block");
         //$("#hamburger-drawer-top").addClass("drawer-left-animation");
     });
 
-    $("#mobile-content").on("click", function() {
-        closeNav("#hamburger-drawer-top");
-        closeNav("#hamburger-drawer-bottom");
+    $(".hamburger-close-button").on("click", function(){
+        closeHamburger();
+    });
+
+    $("#mobile-transparent-background").on("click", function() {
+        closeHamburger();
     });
 });
 
+function closeHamburger() {
+    closeNav("#hamburger-drawer-top");
+    closeNav("#hamburger-drawer-bottom");
+    $("#mobile-transparent-background").css("display", "none");
+}
 
 function openNav(e) {
-  $(e).animate({width:"45%"});
+  $(e).animate({width:"45%"}, 200);
 }
 
 function closeNav(e) {
-  $(e).animate({width:"0%"});
+  $(e).animate({width:"0%"}, 200);
 }
