@@ -13,7 +13,20 @@ $(document).on('ready pjax:scriptcomplete',function(){
      * @see https://learn.jquery.com/using-jquery-core/document-ready/
      */
 
-    $(".bottom-bar-item").on("click", function() {
+    document.ontouchmove = function(event){
+        event.preventDefault();
+    }
+
+    $("#bottom-bar-large .bottom-bar-item").on("click", function() {
+        $(".bottom-bar-item").each(function() {
+            $(this).css("background-color", "#fff");
+        });
+        $(this).css("background-color", "#ccc");
+        $("#mobile-transparent-background").css("display", "block");
+        openBottomNav("#bottom-bar-drawer-one");
+    });
+
+    $("#bottom-bar .bottom-bar-item").on("click", function() {
         $(".bottom-bar-item").each(function() {
             $(this).css("background-color", "#fff");
         });
@@ -22,14 +35,14 @@ $(document).on('ready pjax:scriptcomplete',function(){
 
     $("#hamburger-anchor-top").on("click", function() {
         $(this).css("background-color", "#ccc");
-        openNav("#hamburger-drawer-top");
+        openHamNav("#hamburger-drawer-top");
         $("#mobile-transparent-background").css("display", "block");
         //$("#hamburger-drawer-top").addClass("drawer-left-animation");
     });
 
     $("#hamburger-anchor-bottom").on("click", function() {
         $(this).css("background-color", "#ccc");
-        openNav("#hamburger-drawer-bottom");
+        openHamNav("#hamburger-drawer-bottom");
         $("#mobile-transparent-background").css("display", "block");
         //$("#hamburger-drawer-top").addClass("drawer-left-animation");
     });
@@ -40,19 +53,28 @@ $(document).on('ready pjax:scriptcomplete',function(){
 
     $("#mobile-transparent-background").on("click", function() {
         closeHamburger();
+        closeBottomNav("#bottom-bar-drawer-one");
     });
 });
 
 function closeHamburger() {
-    closeNav("#hamburger-drawer-top");
-    closeNav("#hamburger-drawer-bottom");
+    closeHamNav("#hamburger-drawer-top");
+    closeHamNav("#hamburger-drawer-bottom");
     $("#mobile-transparent-background").css("display", "none");
 }
 
-function openNav(e) {
+function openHamNav(e) {
   $(e).animate({width:"45%"}, 200);
 }
 
-function closeNav(e) {
+function closeHamNav(e) {
   $(e).animate({width:"0%"}, 200);
+}
+
+function openBottomNav(e) {
+  $(e).animate({height:"33vh"}, 200);
+}
+
+function closeBottomNav(e) {
+  $(e).animate({height:"0vh"}, 200);
 }

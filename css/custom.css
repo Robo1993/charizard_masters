@@ -99,6 +99,18 @@ Hamburger Menu
     justify-content: end;
   }
 
+  #hamburger-drawer-bottom > #hamburger-list-small {
+    display: none;
+    justify-content: end;
+    flex-direction: column;
+  }
+
+  #hamburger-drawer-bottom > #hamburger-list-large {
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+  }
+
   #hamburger-list-small {
     height: 100%;
     width: 100%;
@@ -137,9 +149,9 @@ Hamburger Menu
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: calc(100% / 16);
+    height: calc(100% / 13);
     overflow: hidden;
-    text-wrap: nowrap;
+    white-space: nowrap;
   }
 
 /*
@@ -149,6 +161,10 @@ Bottom Bar Menu
 */
 
   #bottom-bar {
+    display: none;
+  }
+
+  #bottom-bar-large {
     display: flex;
   }
 
@@ -164,7 +180,10 @@ Bottom Bar Menu
     width: inherit;
     display: flex;
     flex-flow: column;
-    justify-content: center;
+    justify-content: start;
+    padding-top: 1.5rem;
+    padding-left: .2rem;
+    padding-right: .2rem;
     align-items: center;
     row-gap: .35rem;
 
@@ -175,6 +194,21 @@ Bottom Bar Menu
     text-align: center;
     line-height: 1;
     font-size: 8pt;
+  }
+
+  #bottom-bar-drawers-container {
+    position: absolute;
+    width: 100%;
+  }
+
+  .bottom-bar-drawer {
+    position: absolute;
+    display: flex;
+    flex-flow: column;
+    background-color: #fc1;
+    width: 100%;
+    bottom: 0;
+    z-index: 999;
   }
 
 /*
