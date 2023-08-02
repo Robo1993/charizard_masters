@@ -26,7 +26,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 9999999999;
+    z-index: 999999999999;
 
     display: flex;
     flex-flow: column;
@@ -35,6 +35,7 @@
   #mobile-content {
     flex: 1 1 auto;
     background-color: #ffc;
+    z-index: 1;
   }
 
   #mobile-header {
@@ -45,6 +46,7 @@
   #mobile-footer {
     flex: 0 1 6rem;
     background-color: #cfc;
+    z-index: 1000;
   }
 
   #mobile-transparent-background {
@@ -162,10 +164,12 @@ Bottom Bar Menu
 
   #bottom-bar {
     display: none;
+    z-index: 1000;
   }
 
   #bottom-bar-large {
     display: flex;
+    z-index: 1000;
   }
 
   .bottom-bar {
@@ -207,8 +211,11 @@ Bottom Bar Menu
     flex-flow: column;
     background-color: #fc1;
     width: 100%;
+    height: 0vh;
     bottom: 0;
     z-index: 999;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
 /*
