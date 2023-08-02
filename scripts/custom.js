@@ -39,6 +39,10 @@ $(document).on('ready pjax:scriptcomplete',function(){
         $(this).css("background-color", "#ccc");
     });
 
+    $(".bottom-bar-drawer-close").on("click", function() {
+        closeBottomNav();
+    });
+
     $("#hamburger-anchor-top").on("click", function() {
         $(this).css("background-color", "#ccc");
         openHamNav("#hamburger-drawer-top");
@@ -70,7 +74,7 @@ function closeHamburger() {
 }
 
 function openHamNav(e) {
-  $(e).animate({width:"45%"}, 200);
+  $(e).animate({width:"55%"}, 200);
 }
 
 function closeHamNav(e) {
@@ -78,7 +82,7 @@ function closeHamNav(e) {
 }
 
 function openBottomNav(e) {
-  $(e).animate({height:"20rem"}, 200);
+  $(e).animate({height:(($(e).find(".bottom-bar-drawer-item").length + 1) * 4) + "rem"}, 200);
 }
 
 function closeBottomNav(e) {

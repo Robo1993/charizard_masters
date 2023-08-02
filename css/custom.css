@@ -148,6 +148,7 @@ Hamburger Menu
 
   .hamburger-list-entry {
     display: flex;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -155,6 +156,16 @@ Hamburger Menu
     overflow: hidden;
     white-space: nowrap;
   }
+
+  .menu-divider {
+    display: block;
+    bottom: 0%;
+    content: "";
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(to right,  rgba(147,147,147,.2) 0%,rgba(147,147,147,.5) 50%,rgba(147,147,147,.2) 100%);
+    align-self: flex-end;
+}
 
 /*
 -----------------------------------------------------
@@ -209,6 +220,8 @@ Bottom Bar Menu
     position: absolute;
     display: flex;
     flex-flow: column;
+    justify-content: end;
+    align-items: center;
     background-color: #fc1;
     width: 100%;
     height: 0vh;
@@ -216,6 +229,28 @@ Bottom Bar Menu
     z-index: 999;
     overflow: hidden;
     white-space: nowrap;
+  }
+
+  .bottom-bar-drawer-close {
+    background-color: rgba(0, 0, 0, .1);
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .bottom-bar-drawer-close svg {
+    transform: scale(1.6);
+  }
+
+  .bottom-bar-drawer-item {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
 /*
