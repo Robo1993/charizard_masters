@@ -64,7 +64,43 @@ $(document).on('ready pjax:scriptcomplete',function(){
         closeHamburger();
         closeBottomNav("");
     });
+
+    $(".navigation-point").on("click", function() {
+        let category = $(this).find("span").text();
+        //hideContent();
+        if(category == "Alkali Metals") {
+            $("#alkali-metals").css("display", "flex");
+        }else if(category == "Alkaline-Earth Metals") {
+            $("#alkaline-earth-metals").css("display", "flex");
+        }else if(category == "Transition Metals") {
+            $("#transition-metals").css("display", "flex");
+        }else if(category == "Post-Transition Metals") {
+            $("#post-transition-metals").css("display", "flex");
+        }else if(category == "Metalloids") {
+            $("#metalloids").css("display", "flex");
+        }else if(category == "Nonmetals") {
+            $("#nonmetals").css("display", "flex");
+        }else if(category == "Halogens") {
+            $("#halogens").css("display", "flex");
+        }else if(category == "Noble Gases") {
+            $("#noble-gases").css("display", "flex");
+        }else if(category == "Lanthanoids") {
+            $("#lanthanoids").css("display", "flex");
+        }else if(category == "Actinoids") {
+            $("#actinoids").css("display", "flex");
+        }else if(category == "Fictional Metals") {
+            $("#fictional-metals").css("display", "flex");
+        }else if(category == "Fictional Nonmetals") {
+            $("#fictional-nonmetals").css("display", "flex");
+        }
+    });
 });
+
+function hideContent() {
+    $(".contet-list").each(function() {
+        $(this).css("display", "none");
+    });
+}
 
 function closeHamburger() {
     closeHamNav("#hamburger-drawer-top");
