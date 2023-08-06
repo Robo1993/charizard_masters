@@ -67,7 +67,14 @@ $(document).on('ready pjax:scriptcomplete',function(){
 
     $(".navigation-point").on("click", function() {
         let category = $(this).find("span").text();
-        //hideContent();
+        $(".bottom-bar-drawer").each(function() {
+            $(this).css("height","0vh");
+        });
+        $(".hamburger-drawer").each(function() {
+            $(this).css("width","0%");
+        });
+        $("#mobile-transparent-background").css("display", "none");
+        hideContent($(this));
         if(category == "Alkali Metals") {
             $("#alkali-metals").css("display", "flex");
         }else if(category == "Alkaline-Earth Metals") {
@@ -96,10 +103,12 @@ $(document).on('ready pjax:scriptcomplete',function(){
     });
 });
 
-function hideContent() {
-    $(".contet-list").each(function() {
-        $(this).css("display", "none");
-    });
+function hideContent(e) {
+    if(e.parent().attr("id") != "bottom-bar-large") {
+        $(".content-list").each(function() {
+            $(this).css("display", "none");
+        });
+    }
 }
 
 function closeHamburger() {

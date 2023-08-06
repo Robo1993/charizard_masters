@@ -37,6 +37,7 @@
   }
 
   #mobile-content {
+    height: 100%;
     flex: 1 1 auto;
     background-color: #ffc;
     z-index: 1;
@@ -230,7 +231,8 @@ Bottom Bar Menu
     background-color: #fc1;
     width: 100%;
     height: 0vh;
-    bottom: 0;
+    bottom: 5.4rem;
+    left: 0;
     z-index: 999;
     overflow: hidden;
     white-space: nowrap;
@@ -366,7 +368,7 @@ Actinoids
   }
 
   #curium {
-    background: linear-gradient(0.11turn, #1963cd, #a46605);
+    background: linear-gradient(0.11turn, #144995, #d3a154);
   }
 
   #berkelium {
@@ -380,23 +382,23 @@ Alkali Metals
 */
 
   #lithium {
-    background: linear-gradient(0.11turn, #6c3838, #db6e16);
+    background: linear-gradient(0.11turn, #ae7831, #f1ff35);
   }
 
   #sodium {
-    background: linear-gradient(0.11turn, #46bc86, #5cec45);
+    background: linear-gradient(0.11turn, #740672, #2891d1);
   }
 
   #potassium {
-    background: linear-gradient(0.11turn, #9961d8, #ffa23d);
+    background: linear-gradient(0.11turn, #8e2ba5, #d55656);
   }
 
   #rubidium {
-    background: linear-gradient(0.11turn, #1963cd, #a46605);
+    background: linear-gradient(0.11turn, #1a53a9, #c15b5bd9);
   }
 
   #caesium {
-    background: linear-gradient(0.11turn, #2e6a35, #c5b51e);
+    background: linear-gradient(0.11turn, #6a672e, #c5b51e);
   }
 
 /*
@@ -406,23 +408,23 @@ Alkaline Earth Metals
 */
 
   #beryllium {
-    background: linear-gradient(0.11turn, #6c3838, #db6e16);
+    background: linear-gradient(0.11turn, #64740b, #4bf8ff);
   }
 
   #magnesium {
-    background: linear-gradient(0.11turn, #46bc86, #5cec45);
+    background: linear-gradient(0.11turn, #9e3333, #58d743);
   }
 
   #strontium {
-    background: linear-gradient(0.11turn, #9961d8, #ffa23d);
+    background: linear-gradient(0.11turn, #9961d8, #1ea6eb);
   }
 
   #barium {
-    background: linear-gradient(0.11turn, #1963cd, #a46605);
+    background: linear-gradient(0.11turn, #229122, #dee31f);
   }
 
   #radium {
-    background: linear-gradient(0.11turn, #2e6a35, #c5b51e);
+    background: linear-gradient(0.11turn, #6713ab, #21e020);
   }
 
 /*
@@ -432,23 +434,23 @@ Transition Metals
 */
 
   #titanium {
-    background: linear-gradient(0.11turn, #6c3838, #db6e16);
+    background: linear-gradient(0.11turn, #4e3911, #aeaeae);
   }
 
   #iron {
-    background: linear-gradient(0.11turn, #46bc86, #5cec45);
+    background: linear-gradient(0.11turn, #000000, #9a9a9a);
   }
 
   #copper {
-    background: linear-gradient(0.11turn, #9961d8, #ffa23d);
+    background: linear-gradient(0.11turn, #235e64, #c17624);
   }
 
   #iridium {
-    background: linear-gradient(0.11turn, #1963cd, #a46605);
+    background: linear-gradient(0.11turn, #712f9e, #31bdca);
   }
 
   #bohrium {
-    background: linear-gradient(0.11turn, #2e6a35, #c5b51e);
+    background: linear-gradient(0.11turn, #682e6a, #a488da);
   }
 
 /*
@@ -458,23 +460,23 @@ Post-Transition Metals
 */
 
   #aluminium {
-    background: linear-gradient(0.11turn, #6c3838, #db6e16);
+    background: linear-gradient(0.11turn, #5e5e5e, #868686);
   }
 
   #gallium {
-    background: linear-gradient(0.11turn, #46bc86, #5cec45);
+    background: linear-gradient(0.11turn, #222a6b, #a7c8bc);
   }
 
   #indium {
-    background: linear-gradient(0.11turn, #9961d8, #ffa23d);
+    background: linear-gradient(0.11turn, #172e86, #3a56e7);
   }
 
   #lead {
-    background: linear-gradient(0.11turn, #1963cd, #a46605);
+    background: linear-gradient(0.11turn, #14161e, #7987cf);
   }
 
   #bismuth {
-    background: linear-gradient(0.11turn, #2e6a35, #c5b51e);
+    background: linear-gradient(0.11turn, #71079a, #bfd135);
   }
 
 /*
@@ -484,23 +486,23 @@ Metalloids
 */
 
   #boron {
-    background: linear-gradient(0.11turn, #6c3838, #db6e16);
+    background: linear-gradient(0.11turn, #163576, #16db36);
   }
 
   #silicon {
-    background: linear-gradient(0.11turn, #46bc86, #5cec45);
+    background: linear-gradient(0.11turn, #322323, #366fb4);
   }
 
   #arsenic {
-    background: linear-gradient(0.11turn, #9961d8, #ffa23d);
+    background: linear-gradient(0.11turn, #499145, #75cca8);
   }
 
   #germanium {
-    background: linear-gradient(0.11turn, #1963cd, #a46605);
+    background: linear-gradient(0.11turn, #44453e, #d3c918);
   }
 
   #tellurium {
-    background: linear-gradient(0.11turn, #2e6a35, #c5b51e);
+    background: linear-gradient(0.11turn, #743d6e, #4fd2ff);
   }
 
 /*
@@ -510,23 +512,23 @@ Nonmetals
 */
 
   #carbon {
-    background: linear-gradient(0.11turn, #6c3838, #db6e16);
+    background: linear-gradient(0.11turn, #000000, #555555);
   }
 
   #nitrogen {
-    background: linear-gradient(0.11turn, #46bc86, #5cec45);
+    background: linear-gradient(0.11turn, #5c4864, #e96aec);
   }
 
   #oxygen {
-    background: linear-gradient(0.11turn, #9961d8, #ffa23d);
+    background: linear-gradient(0.11turn, #b18fd8, #f6ae5f);
   }
 
   #phosphorus {
-    background: linear-gradient(0.11turn, #1963cd, #a46605);
+    background: linear-gradient(0.11turn, #761010, #8d65da);
   }
 
   #sulfur {
-    background: linear-gradient(0.11turn, #2e6a35, #c5b51e);
+    background: linear-gradient(0.11turn, #79a320, #ebd509);
   }
 
 /*
@@ -536,23 +538,23 @@ Halogens
 */
 
   #fluorine {
-    background: linear-gradient(0.11turn, #6c3838, #db6e16);
+    background: linear-gradient(0.11turn, #a33540, #f4b767);
   }
 
   #chlorine {
-    background: linear-gradient(0.11turn, #46bc86, #5cec45);
+    background: linear-gradient(0.11turn, #94c828, #68d326);
   }
 
   #bromine {
-    background: linear-gradient(0.11turn, #9961d8, #ffa23d);
+    background: linear-gradient(0.11turn, #932f2f, #ff6c6c);
   }
 
   #iodine {
-    background: linear-gradient(0.11turn, #1963cd, #a46605);
+    background: linear-gradient(0.11turn, #5137ae, #c85aeb);
   }
 
   #astatine {
-    background: linear-gradient(0.11turn, #2e6a35, #c5b51e);
+    background: linear-gradient(0.11turn, #132015, #c9d530);
   }
 
 /*
@@ -562,23 +564,23 @@ Noble Gases
 */
 
   #helium {
-    background: linear-gradient(0.11turn, #6c3838, #db6e16);
+    background: linear-gradient(0.11turn, #523969, #bf2626);
   }
 
   #neon {
-    background: linear-gradient(0.11turn, #46bc86, #5cec45);
+    background: linear-gradient(0.11turn, #07f086, #e3ff02);
   }
 
   #argon {
-    background: linear-gradient(0.11turn, #9961d8, #ffa23d);
+    background: linear-gradient(0.11turn, #1918a7, #e63deb);
   }
 
   #xenon {
-    background: linear-gradient(0.11turn, #1963cd, #a46605);
+    background: linear-gradient(0.11turn, #a864c8, #4886cf);
   }
 
   #radon {
-    background: linear-gradient(0.11turn, #2e6a35, #c5b51e);
+    background: linear-gradient(0.11turn, #1a2170, #da3b6d);
   }
 
 /*
@@ -588,23 +590,23 @@ Lanthanoids
 */
 
   #cerium {
-    background: linear-gradient(0.11turn, #6c3838, #db6e16);
+    background: linear-gradient(0.11turn, #c41e1e, #ffcfa8);
   }
 
   #promethium {
-    background: linear-gradient(0.11turn, #46bc86, #5cec45);
+    background: linear-gradient(0.11turn, #4fa27c, #5de38f);
   }
 
   #samarium {
-    background: linear-gradient(0.11turn, #9961d8, #ffa23d);
+    background: linear-gradient(0.11turn, #6b47d1, #c8d333);
   }
 
   #terbium {
-    background: linear-gradient(0.11turn, #1963cd, #a46605);
+    background: linear-gradient(0.11turn, #4fbb20, #b1f09f);
   }
 
   #thulium {
-    background: linear-gradient(0.11turn, #2e6a35, #c5b51e);
+    background: linear-gradient(0.11turn, #4d3f55, #da91cd);
   }
 
 /*
@@ -614,23 +616,23 @@ Fictional Metals
 */
 
   #mithril {
-    background: linear-gradient(0.11turn, #6c3838, #db6e16);
+    background: linear-gradient(0.11turn, #4b3574, #4463c4);
   }
 
   #adamantium {
-    background: linear-gradient(0.11turn, #46bc86, #5cec45);
+    background: linear-gradient(0.11turn, #315562, #27c461);
   }
 
   #runite {
-    background: linear-gradient(0.11turn, #9961d8, #ffa23d);
+    background: linear-gradient(0.11turn, #554681, #2cb3eb);
   }
 
   #redstone {
-    background: linear-gradient(0.11turn, #1963cd, #a46605);
+    background: linear-gradient(0.11turn, #301515, #e04a4a);
   }
 
   #netherite {
-    background: linear-gradient(0.11turn, #2e6a35, #c5b51e);
+    background: linear-gradient(0.11turn, #292236, #7f6950);
   }
 
 /*
@@ -640,21 +642,21 @@ Fictional Nonmetals
 */
 
   #aether {
-    background: linear-gradient(0.11turn, #6c3838, #db6e16);
+    background: linear-gradient(0.11turn, #563972, #af39e7);
   }
 
   #jerktonium {
-    background: linear-gradient(0.11turn, #46bc86, #5cec45);
+    background: linear-gradient(0.11turn, #33a545, #a4cd1f);
   }
 
   #kryptonite {
-    background: linear-gradient(0.11turn, #9961d8, #ffa23d);
+    background: linear-gradient(0.11turn, #14743b, #40553b);
   }
 
   #duranium {
-    background: linear-gradient(0.11turn, #1963cd, #a46605);
+    background: linear-gradient(0.11turn, #d7d43d, #ab8d5e);
   }
 
   #vibranium {
-    background: linear-gradient(0.11turn, #2e6a35, #c5b51e);
+    background: linear-gradient(0.11turn, #2e336a, #571ec5);
   }
