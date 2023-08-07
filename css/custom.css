@@ -26,7 +26,6 @@
     font-family: roboto;
     width: 100%;
     height: 100%;
-    background-color: #fcf;
     position: absolute;
     top: 0;
     left: 0;
@@ -45,14 +44,14 @@
 
   #mobile-header {
     flex: 0 1 6rem;
-    background-color: #cff;
-    display: none;
+    display: block;
+    background-color: #fff;
   }
 
   #mobile-footer {
     flex: 0 1 6rem;
-    background-color: #cfc;
     z-index: 1000;
+    display: none;
   }
 
   #mobile-transparent-background {
@@ -76,7 +75,7 @@ Hamburger Menu
     position: absolute;
     display: flex;
     flex-flow: column;
-    background-color: #fcc;
+    background-color: #fff;
     height: 100%;
     width: 0%;
     top: 0;
@@ -87,11 +86,13 @@ Hamburger Menu
     width: 100%;
     height: 100%;
     display: flex;
+    background-color: #ccc;
   }
 
   #hamburger-drawer-top {
     left: 0;
     justify-content: start;
+    border-right: 1px solid #ccc;
   }
 
   #hamburger-bottom {
@@ -100,11 +101,13 @@ Hamburger Menu
     display: none;
     flex-flow: row;
     justify-content: end;
+    background-color: #eee;
   }
 
   #hamburger-drawer-bottom {
     right: 0%;
     justify-content: end;
+    border-left: 1px solid #ccc;
   }
 
   #hamburger-drawer-bottom > #hamburger-list-small {
@@ -131,6 +134,8 @@ Hamburger Menu
   }
 
   .hamburger-close-button {
+    justify-content: center !important;
+    padding-left: 0 !important;
     background-color: rgba(0, 0, 0, .1);
   }
 
@@ -154,8 +159,10 @@ Hamburger Menu
 
   .hamburger-list-entry {
     display: flex;
-    flex-flow: column;
-    justify-content: center;
+    flex-flow: row;
+    justify-content: flex-start;
+    column-gap: 1rem;
+    padding-left: 12%;
     align-items: center;
     width: 100%;
     height: calc(100% / 13);
@@ -169,7 +176,7 @@ Hamburger Menu
     content: "";
     height: 1px;
     width: 100%;
-    background: linear-gradient(to right,  rgba(147,147,147,.2) 0%,rgba(147,147,147,.5) 50%,rgba(147,147,147,.2) 100%);
+    background: linear-gradient(to right, rgba(255,255, 255, 1) 0%,rgba(180,180,180, 1) 50%,rgba(255,255,255, 1) 100%);
     align-self: flex-end;
 }
 
@@ -180,12 +187,12 @@ Bottom Bar Menu
 */
 
   #bottom-bar {
-    display: none;
+    display: flex;
     z-index: 1000;
   }
 
   #bottom-bar-large {
-    display: flex;
+    display: none;
     z-index: 1000;
   }
 
@@ -197,7 +204,6 @@ Bottom Bar Menu
   }
 
   .bottom-bar-item {
-    background-color: #fcc;
     width: inherit;
     display: flex;
     flex-flow: column;
@@ -228,7 +234,7 @@ Bottom Bar Menu
     flex-flow: column;
     justify-content: end;
     align-items: center;
-    background-color: #fc1;
+    background-color: #fff;
     width: 100%;
     height: 0vh;
     bottom: 5.4rem;
@@ -257,7 +263,9 @@ Bottom Bar Menu
     height: 4rem;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 32%;
+    column-gap: 1rem;
   }
 
 /*
@@ -580,7 +588,7 @@ Noble Gases
   }
 
   #radon {
-    background: linear-gradient(0.11turn, #1a2170, #da3b6d);
+    background: linear-gradient(0.11turn, #3f26b5, #da3b7c);
   }
 
 /*

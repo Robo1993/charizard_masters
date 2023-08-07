@@ -73,7 +73,6 @@ $(document).on('ready pjax:scriptcomplete',function(){
         $(".hamburger-drawer").each(function() {
             $(this).css("width","0%");
         });
-        $("#mobile-transparent-background").css("display", "none");
         hideContent($(this));
         if(category == "Alkali Metals") {
             $("#alkali-metals").css("display", "flex");
@@ -105,9 +104,16 @@ $(document).on('ready pjax:scriptcomplete',function(){
 
 function hideContent(e) {
     if(e.parent().attr("id") != "bottom-bar-large") {
+        $("#mobile-transparent-background").css("display", "none");
+        $(".bottom-bar-item").each(function() {
+            $(this).css("background-color", "#fff");
+        });
         $(".content-list").each(function() {
             $(this).css("display", "none");
         });
+    }
+    if(e.parent().attr("id") == "bottom-bar") {
+        e.css("background-color", "#ccc");
     }
 }
 
@@ -130,8 +136,11 @@ function openBottomNav(e) {
 }
 
 function closeBottomNav(e) {
-  $(e).animate({height:"0vh"}, 200);
-  $(".bottom-bar-drawer").each(function() {
-    $(this).animate({height:"0vh"}, 200);
-  })
+    $(e).animate({height:"0vh"}, 200);
+    $(".bottom-bar-drawer").each(function() {
+        $(this).animate({height:"0vh"}, 200);
+    })
+    $(".bottom-bar-item").each(function() {
+        $(this).css("background-color", "#fff");
+    });
 }
