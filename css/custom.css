@@ -95,6 +95,12 @@ Hamburger Menu
     border-right: 1px solid #ccc;
   }
 
+    #hamburger-drawer-top > #hamburger-list-small {
+    display: none;
+    justify-content: end;
+    flex-direction: column;
+  }
+
   #hamburger-bottom {
     width: 100%;
     height: 100%;
