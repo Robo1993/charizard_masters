@@ -124,7 +124,7 @@ function closeHamburger() {
 }
 
 function openHamNav(e) {
-  $(e).animate({width:"55%"}, 200);
+  $(e).animate({width:"60%"}, 200);
 }
 
 function closeHamNav(e) {
