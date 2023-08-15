@@ -88,6 +88,7 @@ Hamburger Menu
     height: 100%;
     display: none;
     background-color: #3b3b3b;
+    justify-content: space-between;
   }
 
   #hamburger-drawer-top {
@@ -111,8 +112,8 @@ Hamburger Menu
     height: 100%;
     display: none;
     flex-flow: row;
-    justify-content: end;
     background-color: #3b3b3b;
+    justify-content: space-between;
   }
 
   #hamburger-drawer-bottom {
@@ -191,6 +192,16 @@ Hamburger Menu
     align-self: flex-end;
 }
 
+  .filler {
+    width: 6rem;
+  }
+
+  .hamburger-title {
+    align-self: center;
+    color: #fff;
+    font-size: 1.3rem;
+  }
+
 /*
 -----------------------------------------------------
 Bottom Bar Menu
@@ -219,7 +230,7 @@ Bottom Bar Menu
     display: flex;
     flex-flow: column;
     justify-content: start;
-    padding-top: 1.7rem;
+    padding-top: 1.3rem;
     padding-left: .2rem;
     padding-right: .2rem;
     align-items: center;

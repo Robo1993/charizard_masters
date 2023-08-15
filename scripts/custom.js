@@ -100,6 +100,7 @@ $(document).on('ready pjax:scriptcomplete',function(){
         }else if(category == "Fictional Nonmetals") {
             $("#fictional-nonmetals").css("display", "flex");
         }
+        $(".hamburger-title span").text(category);
     });
 
     $(".buy-button").on("click", function() {
