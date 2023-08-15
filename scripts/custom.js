@@ -5,6 +5,7 @@
    Put JS-functions for your template here.
    If possible use a closure, or add them to the general Template Object "Template"
 */
+let questionCode;
 
 
 $(document).on('ready pjax:scriptcomplete',function(){
@@ -12,9 +13,11 @@ $(document).on('ready pjax:scriptcomplete',function(){
      * Code included inside this will only run once the page Document Object Model (DOM) is ready for JavaScript code to execute
      * @see https://learn.jquery.com/using-jquery-core/document-ready/
      */
-    document.ontouchmove = function(event){
-        event.preventDefault();
-    }
+    // document.ontouchmove = function(event){
+    //     event.preventDefault();
+    // }
+    questionCode = $(".question-code").text().trim();
+    navigationEnabler();
 
     $("#bottom-bar-large .bottom-bar-item").on("click", function() {
         $(".bottom-bar-item").each(function() {
@@ -43,14 +46,12 @@ $(document).on('ready pjax:scriptcomplete',function(){
     });
 
     $("#hamburger-anchor-top").on("click", function() {
-        $(this).css("background-color", "#ccc");
         openHamNav("#hamburger-drawer-top");
         $("#mobile-transparent-background").css("display", "block");
         //$("#hamburger-drawer-top").addClass("drawer-left-animation");
     });
 
     $("#hamburger-anchor-bottom").on("click", function() {
-        $(this).css("background-color", "#ccc");
         openHamNav("#hamburger-drawer-bottom");
         $("#mobile-transparent-background").css("display", "block");
         //$("#hamburger-drawer-top").addClass("drawer-left-animation");
@@ -100,6 +101,10 @@ $(document).on('ready pjax:scriptcomplete',function(){
             $("#fictional-nonmetals").css("display", "flex");
         }
     });
+
+    $(".buy-button").on("click", function() {
+        $("#ls-button-submit").click();
+    });
 });
 
 function hideContent(e) {
@@ -143,4 +148,33 @@ function closeBottomNav(e) {
     $(".bottom-bar-item").each(function() {
         $(this).css("background-color", "#fff");
     });
+}
+
+function navigationEnabler() {
+    //define the location of the menu
+    let bar_or_ham = 0;
+    if(questionCode.indexOf("HamT") != -1) {
+        $("#mobile-header").css("display", "block");
+        $("#hamburger-top").css("display", "flex");
+    }else if(questionCode.indexOf("HamB") != -1) {
+        $("#mobile-footer").css("display", "block");
+        $("#hamburger-bottom").css("display", "flex");
+    }else if(questionCode.indexOf("Bott") != -1) {
+        $("#mobile-footer").css("display", "block");
+        bar_or_ham = 1;
+    }
+    //define the content of the menu
+    if(questionCode.indexOf("Big") != -1) {
+        if(bar_or_ham == 0) {
+            $(".hamburger-list-large").css("display", "flex");
+        }else {
+            $("#bottom-bar-large").css("display", "flex");
+        }
+    }else if(questionCode.indexOf("Small") != -1) {
+        if(bar_or_ham == 0) {
+            $(".hamburger-list-small").css("display", "flex");
+        }else {
+            $("#bottom-bar").css("display", "flex");
+        }
+    }
 }

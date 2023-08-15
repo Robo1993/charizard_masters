@@ -30,7 +30,7 @@
     top: 0;
     left: 0;
     z-index: 999999999999;
-
+    overflow: hidden;
     display: flex;
     flex-flow: column;
   }
@@ -38,7 +38,7 @@
   #mobile-content {
     height: 100%;
     flex: 1 1 auto;
-    background-color: #ffc;
+    background-color: #fff;
     z-index: 1;
   }
 
@@ -46,6 +46,7 @@
     flex: 0 1 6rem;
     display: block;
     background-color: #fff;
+    display: none;
   }
 
   #mobile-footer {
@@ -85,18 +86,22 @@ Hamburger Menu
   #hamburger-top {
     width: 100%;
     height: 100%;
-    display: flex;
-    background-color: #ccc;
+    display: none;
+    background-color: #3b3b3b;
   }
 
   #hamburger-drawer-top {
-    left: 0;
+    left: -1px;
     justify-content: start;
     border-right: 1px solid #ccc;
   }
 
-    #hamburger-drawer-top > #hamburger-list-small {
-    display: none;
+  #hamburger-drawer-top > .hamburger-list-small {
+    justify-content: start;
+    flex-direction: column;
+  }
+
+  #hamburger-drawer-top > .hamburger-list-large {
     justify-content: start;
     flex-direction: column;
   }
@@ -107,36 +112,35 @@ Hamburger Menu
     display: none;
     flex-flow: row;
     justify-content: end;
-    background-color: #eee;
+    background-color: #3b3b3b;
   }
 
   #hamburger-drawer-bottom {
-    right: 0%;
+    right: -1px;
     justify-content: end;
     border-left: 1px solid #ccc;
   }
 
-  #hamburger-drawer-bottom > #hamburger-list-small {
-    display: none;
+  #hamburger-drawer-bottom > .hamburger-list-small {
     justify-content: end;
     flex-direction: column;
   }
 
-  #hamburger-drawer-bottom > #hamburger-list-large {
-    display: flex;
+  #hamburger-drawer-bottom > .hamburger-list-large {
     justify-content: end;
     flex-direction: column;
   }
 
-  #hamburger-list-small {
+  .hamburger-list-small {
     height: 100%;
     width: 100%;
     display: none;
   }
 
-  #hamburger-list-large {
+  .hamburger-list-large {
     height: 100%;
     width: 100%;
+    display: none;
   }
 
   .hamburger-close-button {
@@ -151,7 +155,7 @@ Hamburger Menu
 
   .hamburger-menu-anchor {
     width: 6rem;
-    background-color: #fff;
+    background-color: #3b3b3b;
     display: flex;
     flex-flow: column;
     align-items: center;
@@ -161,6 +165,7 @@ Hamburger Menu
 
   .hamburger-menu-anchor svg {
     transform: scale(2);
+    fill: #fff;
   }
 
   .hamburger-list-entry {
@@ -193,7 +198,7 @@ Bottom Bar Menu
 */
 
   #bottom-bar {
-    display: flex;
+    display: none;
     z-index: 1000;
   }
 
@@ -293,9 +298,9 @@ Content
     justify-content: space-between;
     align-items: center;    
     width: 100%;
-    height: 20%;
+    height: calc(20% - (6rem/5));
     background-color: #fff;
-    padding: 7%;
+    padding: 5%;
   }
 
   .content-item-text {
@@ -320,6 +325,7 @@ Content
 
   .content-item-thumbnail {
     height: 100%;
+    min-height: 5rem;
     aspect-ratio: 1;
     background-color: #ccc;
     border-radius: 1rem;
