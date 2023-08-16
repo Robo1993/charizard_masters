@@ -6,6 +6,7 @@
    If possible use a closure, or add them to the general Template Object "Template"
 */
 let questionCode;
+let response_id;
 
 
 $(document).on('ready pjax:scriptcomplete',function(){
@@ -16,6 +17,9 @@ $(document).on('ready pjax:scriptcomplete',function(){
     // document.ontouchmove = function(event){
     //     event.preventDefault();
     // }
+    // alert(window.navigator.appVersion);
+    // alert("width=" + screen.width + " | " + "height=" + screen.height);
+    response_id = $("#response-id").text();
     questionCode = $(".question-code").text().trim();
     navigationEnabler();
 
@@ -31,7 +35,15 @@ $(document).on('ready pjax:scriptcomplete',function(){
         }).promise().done(function(){
             openBottomNav("#bottom-bar-drawer-" + bottom_drawer);
         });
+        if($(this).find("span").text() == "Objective") {
+            showObjective();
+        }
         //openBottomNav("#bottom-bar-drawer-" + bottom_drawer);
+    });
+
+    $(".hamburger-objective").on("click", function() {
+        showObjective();
+        $(".hamburger-title span").text("Objective");
     });
 
     $("#bottom-bar .bottom-bar-item").on("click", function() {
@@ -39,6 +51,9 @@ $(document).on('ready pjax:scriptcomplete',function(){
             $(this).css("background-color", "#fff");
         });
         $(this).css("background-color", "#ccc");
+        if($(this).find("span").text() == "Objective") {
+            showObjective();
+        }
     });
 
     $(".bottom-bar-drawer-close").on("click", function() {
@@ -68,6 +83,7 @@ $(document).on('ready pjax:scriptcomplete',function(){
 
     $(".navigation-point").on("click", function() {
         let category = $(this).find("span").text();
+        let hide_objective = true;
         $(".bottom-bar-drawer").each(function() {
             $(this).css("height","0vh");
         });
@@ -99,6 +115,11 @@ $(document).on('ready pjax:scriptcomplete',function(){
             $("#fictional-metals").css("display", "flex");
         }else if(category == "Fictional Nonmetals") {
             $("#fictional-nonmetals").css("display", "flex");
+        }else {
+            hide_objective = false;
+        }
+        if(hide_objective) {
+            $("#objective").css("display", "none");
         }
         $(".hamburger-title span").text(category);
     });
@@ -107,6 +128,17 @@ $(document).on('ready pjax:scriptcomplete',function(){
         $("#ls-button-submit").click();
     });
 });
+
+function showObjective() {
+    $("#objective").css("display", "flex");
+    $(".bottom-bar-drawer").each(function() {
+        $(this).animate({height:"0vh"}, 200);
+    });
+    $(".content-list").each(function() {
+        $(this).css("display", "none");
+    });
+    $("#mobile-transparent-background").css("display", "none");
+}
 
 function hideContent(e) {
     if(e.parent().attr("id") != "bottom-bar-large") {

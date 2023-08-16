@@ -72,6 +72,22 @@ Hamburger Menu
 -----------------------------------------------------
 */
 
+  .hamburger-objective {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    row-gap: .4rem;
+    color: #fff;
+  }
+
+  .hamburger-objective svg {
+    fill: #fff;
+    transform: scale(1.5);
+  }
+
   .hamburger-drawer {
     position: absolute;
     display: flex;
@@ -296,6 +312,15 @@ Content
 -----------------------------------------------------
 */
 
+  #objective {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+
   .content-list {
     height: 100%;
     display: flex;
@@ -371,7 +396,7 @@ Content
   }
 
   .buy-button:active {
-    background: linear-gradient(1turn, #2c4467, #3e70b9);
+    background: #284b7e;
   }
 
   .content-list {
