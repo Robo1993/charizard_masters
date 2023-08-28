@@ -22,6 +22,7 @@ $(document).on('ready pjax:scriptcomplete',function(){
     response_id = $("#response-id").text();
     questionCode = $(".question-code").text().trim();
     navigationEnabler();
+    objectiveDetector();
 
     $("#bottom-bar-large .bottom-bar-item").on("click", function() {
         $(".bottom-bar-item").each(function() {
@@ -194,6 +195,7 @@ function navigationEnabler() {
         $("#hamburger-bottom").css("display", "flex");
     }else if(questionCode.indexOf("Bott") != -1) {
         $("#mobile-footer").css("display", "block");
+        $("#mobile-footer").css("z-index", "1000");
         bar_or_ham = 1;
     }
     //define the content of the menu
@@ -210,4 +212,9 @@ function navigationEnabler() {
             $("#bottom-bar").css("display", "flex");
         }
     }
+}
+
+function objectiveDetector() {
+    let text = $("#objective-text-original").text();
+    $("#objective").find("span").text(text);
 }
