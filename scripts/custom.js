@@ -24,6 +24,14 @@ $(document).on('ready pjax:scriptcomplete',function(){
     navigationEnabler();
     objectiveDetector();
 
+    $(window).on('resize', function(event) {
+        if(window.innerHeight < window.innerWidth) {
+            $("#rotation-alert").css("display", "flex");
+        }else {
+            $("#rotation-alert").css("display", "none");
+        }
+    });
+
     $("#bottom-bar-large .bottom-bar-item").on("click", function() {
         $(".bottom-bar-item").each(function() {
             $(this).css("background-color", "#fff");
