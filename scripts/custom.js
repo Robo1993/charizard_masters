@@ -7,6 +7,7 @@
 */
 let questionCode;
 let response_id;
+let navigation_config;
 
 
 $(document).on('ready pjax:scriptcomplete',function(){
@@ -19,7 +20,7 @@ $(document).on('ready pjax:scriptcomplete',function(){
     // }
     // alert(window.navigator.appVersion);
     // alert("width=" + screen.width + " | " + "height=" + screen.height);
-    response_id = $("#response-id").text();
+    response_id = parseInt($("#response-id").text());
     questionCode = $(".question-code").text().trim();
     navigationEnabler();
     objectiveDetector();
@@ -194,6 +195,8 @@ function closeBottomNav(e) {
 
 function navigationEnabler() {
     //define the location of the menu
+    let response_string = response_id.toString();
+    let smallest_digit = parseInt(response_string.at(-1));
     let bar_or_ham = 0;
     if(questionCode.indexOf("HamT") != -1) {
         $("#mobile-header").css("display", "block");
@@ -207,13 +210,26 @@ function navigationEnabler() {
         bar_or_ham = 1;
     }
     //define the content of the menu
-    if(questionCode.indexOf("Big") != -1) {
+    // if(questionCode.indexOf("Big") != -1) {
+    //     if(bar_or_ham == 0) {
+    //         $(".hamburger-list-large").css("display", "flex");
+    //     }else {
+    //         $("#bottom-bar-large").css("display", "flex");
+    //     }
+    // }else if(questionCode.indexOf("Small") != -1) {
+    //     if(bar_or_ham == 0) {
+    //         $(".hamburger-list-small").css("display", "flex");
+    //     }else {
+    //         $("#bottom-bar").css("display", "flex");
+    //     }
+    // }
+    if(response_id % 2 == 0) {
         if(bar_or_ham == 0) {
             $(".hamburger-list-large").css("display", "flex");
         }else {
             $("#bottom-bar-large").css("display", "flex");
         }
-    }else if(questionCode.indexOf("Small") != -1) {
+    }else {
         if(bar_or_ham == 0) {
             $(".hamburger-list-small").css("display", "flex");
         }else {
