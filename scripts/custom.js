@@ -8,6 +8,8 @@
 let questionCode;
 let response_id;
 let navigation_config;
+let navigation_style;
+let navigations_left = [];
 
 
 $(document).on('ready pjax:scriptcomplete',function(){
@@ -22,6 +24,18 @@ $(document).on('ready pjax:scriptcomplete',function(){
     // alert("width=" + screen.width + " | " + "height=" + screen.height);
     response_id = parseInt($("#response-id").text());
     questionCode = $(".question-code").text().trim();
+    navigation_config = $("#current-navigation-config").text().trim();
+    navigation_style = $("#current-navigation-style").text().trim();
+
+    if(questionCode.indexOf("Start") != -1) {
+        localStorage.clear();
+        $(".answer-container").css("display","none");
+        navigationConfig();
+    }else if(questionCode.indexOf("X") != -1) {
+
+    }
+    
+    checkForNavigationStyle();
     navigationEnabler();
     objectiveDetector();
 
@@ -139,6 +153,35 @@ $(document).on('ready pjax:scriptcomplete',function(){
     });
 });
 
+function navigationConfig() {
+    if(response_id % 2 == 0) {
+        $('input[id*="naviConfig"]').val("big");
+    }else {
+        $('input[id*="naviConfig"]').val("small");
+    }
+}
+
+function checkForNavigationStyle() {
+    if(questionCode.indexOf("Intro") != -1) {
+        $(".answer-container").css("display", "none");
+        navigations_left = localStorage.getItem("charizard_navigations");
+
+        if(navigations_left == null) {
+            navigations_left = ["bottomBar", "hamTop", "hamBot"];
+            localStorage.setItem("charizard_navigations", JSON.stringify(navigations_left));
+
+        }else {
+            navigations_left = JSON.parse(localStorage.getItem("charizard_navigations"));
+        }
+    }
+
+    let random_index = Math.floor(Math.random() * navigations_left.length);
+    let current_navigation = navigations_left[random_index];
+    $('input[id*="navigation"]').val(current_navigation);
+    navigations_left.splice(random_index, 1);
+    localStorage.setItem("charizard_navigations", JSON.stringify(navigations_left));
+}
+
 function showObjective() {
     $("#objective").css("display", "flex");
     $(".bottom-bar-drawer").each(function() {
@@ -194,20 +237,17 @@ function closeBottomNav(e) {
 }
 
 function navigationEnabler() {
-    //define the location of the menu
-    let response_string = response_id.toString();
-    let smallest_digit = parseInt(response_string.at(-1));
-    let bar_or_ham = 0;
-    if(questionCode.indexOf("HamT") != -1) {
+    let bar = false;
+    if(navigation_style == "hamTop") {
         $("#mobile-header").css("display", "block");
         $("#hamburger-top").css("display", "flex");
-    }else if(questionCode.indexOf("HamB") != -1) {
+    }else if(navigation_style == "hamBot") {
         $("#mobile-footer").css("display", "block");
         $("#hamburger-bottom").css("display", "flex");
-    }else if(questionCode.indexOf("Bott") != -1) {
+    }else if(navigation_style == "bottomBar") {
         $("#mobile-footer").css("display", "block");
         $("#mobile-footer").css("z-index", "1000");
-        bar_or_ham = 1;
+        bar = true;
     }
     //define the content of the menu
     // if(questionCode.indexOf("Big") != -1) {
@@ -223,14 +263,14 @@ function navigationEnabler() {
     //         $("#bottom-bar").css("display", "flex");
     //     }
     // }
-    if(response_id % 2 == 0) {
-        if(bar_or_ham == 0) {
+    if(navigation_config == "big") {
+        if(!bar) {
             $(".hamburger-list-large").css("display", "flex");
         }else {
             $("#bottom-bar-large").css("display", "flex");
         }
-    }else {
-        if(bar_or_ham == 0) {
+    }else if(navigation_config == "small") {
+        if(!bar) {
             $(".hamburger-list-small").css("display", "flex");
         }else {
             $("#bottom-bar").css("display", "flex");
