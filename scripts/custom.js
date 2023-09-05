@@ -10,6 +10,10 @@ let response_id;
 let navigation_config;
 let navigation_style;
 let navigations_left = [];
+let time_start;
+let time_end;
+let moves = 0;
+let errors = 0;
 
 
 $(document).on('ready pjax:scriptcomplete',function(){
@@ -30,9 +34,10 @@ $(document).on('ready pjax:scriptcomplete',function(){
     if(questionCode.indexOf("Start") != -1) {
         localStorage.clear();
         $(".answer-container").css("display","none");
+        $("#mobile-body").css("display","none");
         navigationConfig();
     }else if(questionCode.indexOf("X") != -1) {
-
+        time_start = performance.now();
     }
     
     checkForNavigationStyle();
@@ -106,6 +111,7 @@ $(document).on('ready pjax:scriptcomplete',function(){
     });
 
     $(".navigation-point").on("click", function() {
+        moves++;
         let category = $(this).find("span").text();
         let hide_objective = true;
         $(".bottom-bar-drawer").each(function() {
@@ -149,7 +155,17 @@ $(document).on('ready pjax:scriptcomplete',function(){
     });
 
     $(".buy-button").on("click", function() {
-        $("#ls-button-submit").click();
+        if($(this).parent().parent().find(".element-name").text().trim() == $("#correct-element").text().trim()) {
+            time_end = performance.now();
+            let task_time = time_end - time_start;
+            $('input[id*="taskTime"]').val(task_time);
+            $('input[id*="moves"]').val(moves);
+            $('input[id*="completed"]').val(1);
+            $("#ls-button-submit").click();
+        }else {
+            alert("wrong element, check your objective if you don't remember.");
+            errors++;
+        }
     });
 });
 
@@ -164,6 +180,7 @@ function navigationConfig() {
 function checkForNavigationStyle() {
     if(questionCode.indexOf("Intro") != -1) {
         $(".answer-container").css("display", "none");
+        $("#mobile-body").css("display","none");
         navigations_left = localStorage.getItem("charizard_navigations");
 
         if(navigations_left == null) {
@@ -173,13 +190,12 @@ function checkForNavigationStyle() {
         }else {
             navigations_left = JSON.parse(localStorage.getItem("charizard_navigations"));
         }
+        let random_index = Math.floor(Math.random() * navigations_left.length);
+        let current_navigation = navigations_left[random_index];
+        $('input[id*="navigation"]').val(current_navigation);
+        navigations_left.splice(random_index, 1);
+        localStorage.setItem("charizard_navigations", JSON.stringify(navigations_left));
     }
-
-    let random_index = Math.floor(Math.random() * navigations_left.length);
-    let current_navigation = navigations_left[random_index];
-    $('input[id*="navigation"]').val(current_navigation);
-    navigations_left.splice(random_index, 1);
-    localStorage.setItem("charizard_navigations", JSON.stringify(navigations_left));
 }
 
 function showObjective() {
