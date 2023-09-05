@@ -161,6 +161,7 @@ $(document).on('ready pjax:scriptcomplete',function(){
             $('input[id*="taskTime"]').val(task_time);
             $('input[id*="moves"]').val(moves);
             $('input[id*="completed"]').val(1);
+            $('input[id*="errors"]').val(errors);
             $("#ls-button-submit").click();
         }else {
             alert("wrong element, check your objective if you don't remember.");
