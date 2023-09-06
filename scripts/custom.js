@@ -183,7 +183,17 @@ $(document).on('ready pjax:scriptcomplete',function(){
     });
 
     $(".custom-next-button").on("click", function() {
-        $("#ls-button-submit").click();
+        let all_fields_filled = true;
+        $('input[id*="answer"]').each(function() {
+            if($(this).val() == "") {
+                all_fields_filled = false;
+            }
+        });
+        if(all_fields_filled) {
+            $("#ls-button-submit").click();
+        }else {
+            alert("You seem to have missed some terms. Please fill in your answer in the missing row(s).");
+        }
     });
 });
 
