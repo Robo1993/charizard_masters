@@ -38,6 +38,13 @@ $(document).on('ready pjax:scriptcomplete',function(){
         navigationConfig();
     }else if(questionCode.indexOf("X") != -1) {
         time_start = performance.now();
+        $("#mobile-body").css("display","flex");
+    }
+
+    if(questionCode.indexOf("UEQSusability") != -1) {
+        $("#ueq-s-use").css("display","flex");
+    }else if(questionCode.indexOf("UEQShedonism") != -1) {
+        $("#ueq-s-hedon").css("display","flex");
     }
     
     checkForNavigationStyle();
@@ -50,6 +57,12 @@ $(document).on('ready pjax:scriptcomplete',function(){
         }else {
             $("#rotation-alert").css("display", "none");
         }
+    });
+
+    $(".ueq-radio").on("click", function() {
+        let axis = $(this).attr("name");
+        let value = $(this).val();
+        $('input[id*="' + axis + '"]').val(value);
     });
 
     $("#bottom-bar-large .bottom-bar-item").on("click", function() {
@@ -167,6 +180,10 @@ $(document).on('ready pjax:scriptcomplete',function(){
             alert("wrong element, check your objective if you don't remember.");
             errors++;
         }
+    });
+
+    $(".custom-next-button").on("click", function() {
+        $("#ls-button-submit").click();
     });
 });
 
