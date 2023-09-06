@@ -325,4 +325,5 @@ function navigationEnabler() {
 function objectiveDetector() {
     let text = $("#objective-text-original").text();
     $("#objective").find("span").text(text);
+    $("#objective").prepend("<span class='granny'>👵</span>");
 }

@@ -84,6 +84,10 @@
     display: none !important;
   }
 
+  .granny {
+    font-size: 5rem;
+  }
+
   #mobile-body {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
@@ -423,7 +427,8 @@ Content
   }
 
   #objective span {
-    padding: 13%;
+    margin-top: -5%;
+    padding: 0% 13% 10% 13%;
   }
 
   .content-list {
