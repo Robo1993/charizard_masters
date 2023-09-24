@@ -26,30 +26,9 @@ $(document).on('ready pjax:scriptcomplete',function(){
     // }
     // alert(window.navigator.appVersion);
     // alert("width=" + screen.width + " | " + "height=" + screen.height);
-    response_id = parseInt($("#response-id").text());
-    questionCode = $(".question-code").text().trim();
-    navigation_config = $("#current-navigation-config").text().trim();
-    navigation_style = $("#current-navigation-style").text().trim();
-
-    if(questionCode.indexOf("Start") != -1) {
-        localStorage.clear();
-        $(".answer-container").css("display","none");
-        $("#mobile-body").css("display","none");
-        navigationConfig();
-    }else if(questionCode.indexOf("X") != -1) {
-        time_start = performance.now();
-        $("#mobile-body").css("display","flex");
-    }
-
-    if(questionCode.indexOf("UEQSusability") != -1) {
-        $("#ueq-s-use").css("display","flex");
-    }else if(questionCode.indexOf("UEQShedonism") != -1) {
-        $("#ueq-s-hedon").css("display","flex");
-    }
-    
-    checkForNavigationStyle();
-    navigationEnabler();
-    objectiveDetector();
+    $.when( setupMobileBody() ).done(function() {
+       $("#white-space-safer").css("display", "none");
+    });
 
     $(window).on('resize', function(event) {
         if(window.innerHeight < window.innerWidth) {
@@ -196,6 +175,41 @@ $(document).on('ready pjax:scriptcomplete',function(){
         }
     });
 });
+
+function setupMobileBody() {
+    
+    if(window.innerHeight < window.innerWidth) {
+        $("#rotation-alert").css("display", "flex");
+    }else {
+        $("#rotation-alert").css("display", "none");
+    }
+
+    response_id = parseInt($("#response-id").text());
+    questionCode = $(".question-code").text().trim();
+    navigation_config = $("#current-navigation-config").text().trim();
+    navigation_style = $("#current-navigation-style").text().trim();
+
+    if(questionCode.indexOf("Start") != -1) {
+        localStorage.clear();
+        $(".answer-container").css("display","none");
+        $("#mobile-body").css("display","none");
+        navigationConfig();
+    }else if(questionCode.indexOf("X") != -1) {
+        time_start = performance.now();
+        $("#mobile-body").css("display","flex");
+        $("#main-row").css("display", "none");
+    }
+
+    if(questionCode.indexOf("UEQSusability") != -1) {
+        $("#ueq-s-use").css("display","flex");
+    }else if(questionCode.indexOf("UEQShedonism") != -1) {
+        $("#ueq-s-hedon").css("display","flex");
+    }
+    
+    checkForNavigationStyle();
+    navigationEnabler();
+    objectiveDetector();
+}
 
 function navigationConfig() {
     if(response_id % 2 == 0) {
