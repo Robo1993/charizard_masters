@@ -14,6 +14,7 @@ let time_start;
 let time_end;
 let moves = 0;
 let errors = 0;
+let mobile = false;
 
 
 $(document).on('ready pjax:scriptcomplete',function(){
@@ -26,8 +27,10 @@ $(document).on('ready pjax:scriptcomplete',function(){
     // }
     // alert(window.navigator.appVersion);
     // alert("width=" + screen.width + " | " + "height=" + screen.height);
+    
     $.when( setupMobileBody() ).done(function() {
        $("#white-space-safer").css("display", "none");
+       alert(mobile);
     });
 
     $(window).on('resize', function(event) {
@@ -177,6 +180,8 @@ $(document).on('ready pjax:scriptcomplete',function(){
 });
 
 function setupMobileBody() {
+
+    mobile = navigator.userAgent.indexOf("Mobile") != -1 ? true : false;
     
     if(window.innerHeight < window.innerWidth) {
         $("#rotation-alert").css("display", "flex");
