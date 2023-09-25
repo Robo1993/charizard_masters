@@ -29,8 +29,12 @@ $(document).on('ready pjax:scriptcomplete',function(){
     // alert("width=" + screen.width + " | " + "height=" + screen.height);
     
     $.when( setupMobileBody() ).done(function() {
-       $("#white-space-safer").css("display", "none");
-       alert(mobile);
+        if(mobile) {
+            $("#white-space-safer").css("display", "none");
+        }else {
+            $("#not-mobile-alert").css("display", "flex");
+            $("#white-space-safer").css("display", "none");
+        }
     });
 
     $(window).on('resize', function(event) {
@@ -199,6 +203,10 @@ function setupMobileBody() {
         $(".answer-container").css("display","none");
         $("#mobile-body").css("display","none");
         navigationConfig();
+        if(mobile) {
+            $("#not-mobile-alert").css("display", "flex");
+            $('input[id*="mobile"]').val(mobile);
+        }
     }else if(questionCode.indexOf("X") != -1) {
         time_start = performance.now();
         $("#mobile-body").css("display","flex");
@@ -230,8 +238,10 @@ function checkForNavigationStyle() {
         $("#mobile-body").css("display","none");
         navigations_left = localStorage.getItem("charizard_navigations");
 
+        // if you want to use the bottom hamburger menu, add hamBot to the navigations_left array. 
+        //Also enable the third task question group for the Cleaner on Limesurvey, by removing 0 from the group condition.
         if(navigations_left == null) {
-            navigations_left = ["bottomBar", "hamTop", "hamBot"];
+            navigations_left = ["bottomBar", "hamTop"];
             localStorage.setItem("charizard_navigations", JSON.stringify(navigations_left));
 
         }else {
@@ -342,7 +352,7 @@ function navigationEnabler() {
 }
 
 function objectiveDetector() {
-    let text = $("#objective-text-original").text();
-    $("#objective").find("span").text(text);
+    let text = $("#objective-text-original").clone();
+    $("#objective").find("span").append(text);
     $("#objective").prepend("<span class='granny'>👵</span>");
 }
