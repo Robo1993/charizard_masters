@@ -50,6 +50,11 @@
     height: 12%;
   }
 
+  #not-mobile-alert span {
+    padding: 0vh 5vh 0vh;
+    text-align: center;
+  }
+
   .UEQ-S {
     background-color: #fff;
     position: absolute;
