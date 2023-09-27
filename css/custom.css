@@ -456,6 +456,7 @@ Content
     flex-flow: column;
     align-items: center;
     justify-content: center;
+    text-align: justify;
   }
 
   #objective span {

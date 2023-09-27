@@ -203,10 +203,10 @@ function setupMobileBody() {
         $(".answer-container").css("display","none");
         $("#mobile-body").css("display","none");
         navigationConfig();
-        if(mobile) {
+        if(!mobile) {
             $("#not-mobile-alert").css("display", "flex");
-            $('input[id*="mobile"]').val(mobile);
         }
+        $('input[id*="mobile"]').val(mobile);
     }else if(questionCode.indexOf("X") != -1) {
         time_start = performance.now();
         $("#mobile-body").css("display","flex");
@@ -353,6 +353,6 @@ function navigationEnabler() {
 
 function objectiveDetector() {
     let text = $("#objective-text-original").clone();
-    $("#objective").find("span").append(text);
+    $("#objective").append(text);
     $("#objective").prepend("<span class='granny'>👵</span>");
 }
