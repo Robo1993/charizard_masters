@@ -221,6 +221,8 @@ function setupMobileBody() {
     }else if(questionCode.indexOf("Granny") != -1) {
         $(".granny").css("display", "none");
         $("#ls-button-submit").css("display","none");
+        $(".answer-container").css("display","none");
+        $(".question-container").css({"border":"0px", "background-color":"#fff"});
     }
 
     if(questionCode.indexOf("UEQSusability") != -1) {
@@ -237,25 +239,22 @@ function setupMobileBody() {
 function letGrannyTalk() {
     if(questionCode.indexOf("Granny") != -1) {
         // example
-        var str = "Hello my dear, I want stuff, give me.";
+        var str = "We need a material for the anode, the negative pole of the battery. Go ahead and buy some Copper.";
         var elem = $("#granny-intro-text");
         var timeBetween = 50;
 
-        $.when( setTimeout(function() {
-            $(".granny").fadeIn(500);
-        }, 1000) ).done(function() {
+        $(".granny").fadeIn(1500).promise().done(function() {
+            typeText(elem, str, timeBetween);
             setTimeout(function() {
-                typeText(elem, str, timeBetween);
-            }, 1500);
+                $("#ls-button-submit").fadeIn(1000);
+            }, str.split("").length * timeBetween);
         });
-        setTimeout( function() {
-            $("#ls-button-submit").fadeIn(800)
-        }, 3000);
     }
 }
 
 function typeText(e, myText, timeBetween) {
     let text_array = myText.split("").reverse();
+    e.text("");
     var outputSlowly = setInterval(function() {
         // Add text to the target element
         e.append(text_array.pop());
