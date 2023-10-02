@@ -23,6 +23,10 @@
     padding: 0px 0px 0px !important;
   }
 
+  #consent-agreement-field {
+    display: none;
+  }
+
   #white-space-safer {
     position: absolute;
     width: 100vw;
@@ -114,6 +118,10 @@
 
   .question-code {
     display: none !important;
+  }
+
+  #response-id {
+    display: none;
   }
 
   .granny {

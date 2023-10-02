@@ -35,6 +35,7 @@ $(document).on('ready pjax:scriptcomplete',function(){
             $("#not-mobile-alert").css("display", "flex");
             $("#white-space-safer").css("display", "none");
         }
+        letGrannyTalk();
     });
 
     $(window).on('resize', function(event) {
@@ -43,6 +44,11 @@ $(document).on('ready pjax:scriptcomplete',function(){
         }else {
             $("#rotation-alert").css("display", "none");
         }
+    });
+
+    $("#consent-agreement-field").on("click", function() {
+        let consent_given = $("#consent-agreement-box").is(":checked");
+        consent_given ? $('input[id*="consentGiven"]').val(consent_given) : $('input[id*="consentGiven"]').val("");
     });
 
     $(".ueq-radio").on("click", function() {
@@ -200,6 +206,7 @@ function setupMobileBody() {
 
     if(questionCode.indexOf("Start") != -1) {
         localStorage.clear();
+        $("#consent-agreement-field").css("display","block");
         $(".answer-container").css("display","none");
         $("#mobile-body").css("display","none");
         navigationConfig();
@@ -211,6 +218,9 @@ function setupMobileBody() {
         time_start = performance.now();
         $("#mobile-body").css("display","flex");
         $("#main-row").css("display", "none");
+    }else if(questionCode.indexOf("Granny") != -1) {
+        $(".granny").css("display", "none");
+        $("#ls-button-submit").css("display","none");
     }
 
     if(questionCode.indexOf("UEQSusability") != -1) {
@@ -222,6 +232,39 @@ function setupMobileBody() {
     checkForNavigationStyle();
     navigationEnabler();
     objectiveDetector();
+}
+
+function letGrannyTalk() {
+    if(questionCode.indexOf("Granny") != -1) {
+        // example
+        var str = "Hello my dear, I want stuff, give me.";
+        var elem = $("#granny-intro-text");
+        var timeBetween = 50;
+
+        $.when( setTimeout(function() {
+            $(".granny").fadeIn(500);
+        }, 1000) ).done(function() {
+            setTimeout(function() {
+                typeText(elem, str, timeBetween);
+            }, 1500);
+        });
+        setTimeout( function() {
+            $("#ls-button-submit").fadeIn(800)
+        }, 3000);
+    }
+}
+
+function typeText(e, myText, timeBetween) {
+    let text_array = myText.split("").reverse();
+    var outputSlowly = setInterval(function() {
+        // Add text to the target element
+        e.append(text_array.pop());
+
+        // No more characters - exit
+        if (text_array.length === 0) {            
+            clearInterval(outputSlowly);   
+        }
+    }, timeBetween);
 }
 
 function navigationConfig() {
