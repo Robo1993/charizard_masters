@@ -239,7 +239,7 @@ function setupMobileBody() {
 function letGrannyTalk() {
     if(questionCode.indexOf("Granny") != -1) {
         // example
-        var str = "We need a material for the anode, the negative pole of the battery. Go ahead and buy some Copper.";
+        var str = $("#granny-pre-text").text();
         var elem = $("#granny-intro-text");
         var timeBetween = 50;
 

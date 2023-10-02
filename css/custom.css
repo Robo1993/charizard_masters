@@ -132,6 +132,10 @@
     text-align: justify;
   }
 
+  #granny-pre-text {
+    display: none;
+  }
+
   #mobile-body {
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
