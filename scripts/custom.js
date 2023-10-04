@@ -214,7 +214,7 @@ function setupMobileBody() {
             $("#not-mobile-alert").css("display", "flex");
         }
         $('input[id*="mobile"]').val(mobile);
-    }else if(questionCode.indexOf("X") != -1) {
+    }else if(questionCode.indexOf("Instructions") != -1) {
         $(".answer-container").css("display","none");
     }else if(questionCode.indexOf("X") != -1) {
         time_start = performance.now();
