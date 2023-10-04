@@ -129,7 +129,7 @@
   }
 
   #granny-intro-text {
-    text-align: justify;
+    text-align: left;
   }
 
   #granny-pre-text {
@@ -472,7 +472,7 @@ Content
     flex-flow: column;
     align-items: center;
     justify-content: start;
-    text-align: justify;
+    text-align: left;
     margin-top: 25vh;
   }
 

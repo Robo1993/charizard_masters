@@ -221,7 +221,7 @@ function setupMobileBody() {
         $("#mobile-body").css("display","flex");
         $("#main-row").css("display", "none");
     }else if(questionCode.indexOf("Granny") != -1) {
-        $(".granny").css("display", "none");
+        $(".question-text").css("margin-top", "20vh");
         $("#ls-button-submit").css("display","none");
         $(".answer-container").css("display","none");
         $(".question-container").css({"border":"0px", "background-color":"#fff"});
