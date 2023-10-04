@@ -471,8 +471,9 @@ Content
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     text-align: justify;
+    margin-top: 25vh;
   }
 
   #objective span {

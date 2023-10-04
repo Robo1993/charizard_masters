@@ -215,6 +215,8 @@ function setupMobileBody() {
         }
         $('input[id*="mobile"]').val(mobile);
     }else if(questionCode.indexOf("X") != -1) {
+        $(".answer-container").css("display","none");
+    }else if(questionCode.indexOf("X") != -1) {
         time_start = performance.now();
         $("#mobile-body").css("display","flex");
         $("#main-row").css("display", "none");
@@ -241,7 +243,7 @@ function letGrannyTalk() {
         // example
         var str = $("#granny-pre-text").text();
         var elem = $("#granny-intro-text");
-        var timeBetween = 50;
+        var timeBetween = 30;
 
         $(".granny").fadeIn(1500).promise().done(function() {
             typeText(elem, str, timeBetween);
@@ -394,7 +396,9 @@ function navigationEnabler() {
 }
 
 function objectiveDetector() {
-    let text = $("#objective-text-original").clone();
-    $("#objective").append(text);
-    $("#objective").prepend("<span class='granny'>👵</span>");
+    let text = $("#objective-text-original").text();
+    //$("#objective").append(text);
+    $.when($("#objective").prepend("<span class='granny'>👵</span>")).done(function() {
+        typeText($("#objective-text"), text, 30);
+    });
 }
