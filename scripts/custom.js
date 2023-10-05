@@ -214,6 +214,7 @@ function setupMobileBody() {
             $("#not-mobile-alert").css("display", "flex");
         }
         $('input[id*="mobile"]').val(mobile);
+        $('input[id*="screenSize"]').val($(window).width() + "x" + $(window).height());
     }else if(questionCode.indexOf("Instructions") != -1) {
         $(".answer-container").css("display","none");
     }else if(questionCode.indexOf("X") != -1) {
