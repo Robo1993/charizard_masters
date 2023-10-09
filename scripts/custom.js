@@ -226,6 +226,8 @@ function setupMobileBody() {
         $("#ls-button-submit").css("display","none");
         $(".answer-container").css("display","none");
         $(".question-container").css({"border":"0px", "background-color":"#fff"});
+    }else if(questionCode.indexOf("Gender") != -1) {
+        $('label:contains("No answer")').text("Other");
     }
 
     if(questionCode.indexOf("UEQSusability") != -1) {
