@@ -359,13 +359,13 @@ function closeBottomNav(e) {
 function navigationEnabler() {
     let bar = false;
     if(navigation_style == "hamTop") {
-        $("#mobile-header").css("display", "block");
+        $("#mobile-header").css("display", "flex");
         $("#hamburger-top").css("display", "flex");
     }else if(navigation_style == "hamBot") {
-        $("#mobile-footer").css("display", "block");
+        $("#mobile-footer").css("display", "flex");
         $("#hamburger-bottom").css("display", "flex");
     }else if(navigation_style == "bottomBar") {
-        $("#mobile-footer").css("display", "block");
+        $("#mobile-footer").css("display", "flex");
         $("#mobile-footer").css("z-index", "1000");
         bar = true;
     }
