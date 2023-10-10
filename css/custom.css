@@ -69,7 +69,6 @@
     justify-content: center;
     align-items: center;
     flex-flow: column;
-    row-gap: 1.4rem;
     font-size: 12pt;
     z-index: 999;
     padding: 0% 8% 0% 8%;
@@ -80,7 +79,7 @@
   }
 
   .ueq-s-text-box {
-
+    margin-bottom: .8rem;
   }
 
   #ueq-s-hedon {
@@ -97,7 +96,8 @@
     flex-flow: column;
     justify-content: center;
     align-items: center;
-    row-gap: .7rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;    
   }
 
   .ueq-s-item-first-row {
@@ -109,6 +109,8 @@
   }
 
   .ueq-s-item-second-row {
+    margin-top: .6rem;
+    margin-bottom: .6rem;
     width: inherit;
     display: flex;
     flex-flow: row;
