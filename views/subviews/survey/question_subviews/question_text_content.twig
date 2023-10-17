@@ -39,6 +39,7 @@
 <div class="{{ aSurveyInfo.class.questiontext }}" {{ aSurveyInfo.attr.questiontext }}>
     <div id="ls-question-text-{{ aQuestion.SGQ }}" class="{{ aSurveyInfo.class.lsquestiontext }}" {{ aSurveyInfo.attr.lsquestiontext }}>
         {{ aQuestion.text | raw }}
-        <div id="consent-agreement-field"><p><input id="consent-agreement-box" name="consent" type="checkbox" /> <span>I agree to the consent form and to the processing of my personal data in accordance with the information provided herein.</span></p></div>
+        <div id="consent-agreement-field"><p><input id="consent-agreement-box" name="consent" type="radio" /> <span>I <b>agree</b> to the consent form and to the processing of my personal data in accordance with the information provided herein.</span></p>
+            <p><input id="consent-disagreement-box" name="consent" type="radio" /> <span>I <b> don't agree</b> to the consent form and to the processing of my personal data.</span></p></div>
     </div>
 </div>

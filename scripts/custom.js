@@ -46,9 +46,14 @@ $(document).on('ready pjax:scriptcomplete',function(){
         }
     });
 
-    $("#consent-agreement-field").on("click", function() {
-        let consent_given = $("#consent-agreement-box").is(":checked");
-        consent_given ? $('input[id*="consentGiven"]').val(consent_given) : $('input[id*="consentGiven"]').val("");
+    $("#consent-agreement-box").on("click", function() {
+        consent_given = "Y"
+        $('input[id*="consentGiven"]').val("Y")
+    });
+
+    $("#consent-disagreement-box").on("click", function() {
+        $('input[id*="consentGiven"]').val("N")
+        consent_given = "N"
     });
 
     $(".ueq-radio").on("click", function() {
