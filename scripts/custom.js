@@ -233,6 +233,9 @@ function setupMobileBody() {
         $(".question-container").css({"border":"0px", "background-color":"#fff"});
     }else if(questionCode.indexOf("Gender") != -1) {
         $('label:contains("No answer")').text("Other");
+        $("input[type=radio]").each(function() {
+            $(this).prop("checked", false);
+        });
     }
 
     if(questionCode.indexOf("UEQSusability") != -1) {
