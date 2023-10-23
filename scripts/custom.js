@@ -172,7 +172,8 @@ $(document).on('ready pjax:scriptcomplete',function(){
             $('input[id*="moves"]').val(moves);
             $('input[id*="completed"]').val(1);
             $('input[id*="errors"]').val(errors);
-            $("#ls-button-submit").click();
+            //$("#ls-button-submit").click();
+            sayThankYouGranny();
         }else {
             alert("wrong element, check your objective if you don't remember.");
             errors++;
@@ -266,6 +267,20 @@ function letGrannyTalk() {
             }, str.split("").length * timeBetween);
         });
     }
+}
+
+function sayThankYouGranny() {
+    $("#granny-container").css("display", "flex");
+    var str = "Wonderful, thats the correct material. Thank you very much!";
+    var elem = $("#granny-text");
+    var timeBetween = 30;
+
+    $(".granny").fadeIn(1500).promise().done(function() {
+        typeText(elem, str, timeBetween);
+        setTimeout(function() {
+            $("#ls-button-submit").fadeIn(1000);
+        }, str.split("").length * timeBetween);
+    });
 }
 
 function typeText(e, myText, timeBetween) {

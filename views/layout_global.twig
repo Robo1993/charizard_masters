@@ -76,6 +76,7 @@
     <body class=" {{ aSurveyInfo.class.body }} font-{{  aSurveyInfo.options.font }} lang-{{aSurveyInfo.languagecode}} {{aSurveyInfo.surveyformat}} {% if( aSurveyInfo.options.brandlogo == "on") %}brand-logo{%endif%}" {{ aSurveyInfo.attr.body }} >
         <div id="white-space-safer"></div>
         {{ include('./subviews/messages/not-mobile-alert.twig') }}
+        {{ include('./subviews/content/granny.twig') }}
         {{ include('./subviews/content/mobile-body.twig') }}
         {{ include('./subviews/content/ueq-s.twig') }}
         {# Notice if emcache is on or off, used by tests. #}

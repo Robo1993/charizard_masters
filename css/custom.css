@@ -146,6 +146,25 @@
     font-size: 5rem;
   }
 
+  #granny-container {
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding-left: 8%;
+    padding-right: 8%;
+    background-color: #fff;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+  }
+
+  #granny-container span {
+    margin-bottom: 2rem;
+    min-height: 4rem;
+  }
+
   #granny-intro-text {
     text-align: left;
   }
@@ -164,7 +183,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    z-index: 999999999999;
+    z-index: 9999;
     overflow: hidden;
     display: none;
     flex-flow: column;
