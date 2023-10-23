@@ -236,6 +236,9 @@ function setupMobileBody() {
         $("input[type=radio]").each(function() {
             $(this).prop("checked", false);
         });
+    }else if(questionCode.indexOf("Age") != -1) {
+        $('#vmsg_316_value_range:span').text("You have to be at least 18 years old.");
+        $('#vmsg_316_value_integer:span').text("Only whole numbers may be entered in this field.");
     }
 
     if(questionCode.indexOf("UEQSusability") != -1) {
