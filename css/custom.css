@@ -143,7 +143,12 @@
   }
 
   .granny {
+    display: none;
     font-size: 5rem;
+  }
+
+  #granny-text {
+    word-break: keep-all;
   }
 
   #granny-container {
@@ -167,6 +172,7 @@
 
   #granny-intro-text {
     text-align: left;
+    word-break: keep-all;
   }
 
   #granny-pre-text {
@@ -527,6 +533,11 @@ Content
   #objective span {
     margin-top: -5%;
     padding: 0% 13% 10% 13%;
+  }
+
+  #objective-element {
+    display: none;
+    font-size: 3rem;
   }
 
   .content-list {

@@ -271,14 +271,16 @@ function letGrannyTalk() {
 
 function sayThankYouGranny() {
     $("#granny-container").css("display", "flex");
-    var str = "Wonderful, thats the correct material. Thank you very much!";
+    var str = "Wonderful, thank you very much!";
     var elem = $("#granny-text");
     var timeBetween = 30;
+    $(".granny").css("display", "none");
+    $(".custom-next-button").css("display", "none");
 
     $(".granny").fadeIn(1500).promise().done(function() {
         typeText(elem, str, timeBetween);
         setTimeout(function() {
-            $("#ls-button-submit").fadeIn(1000);
+            $(".custom-next-button").fadeIn(1000);
         }, str.split("").length * timeBetween);
     });
 }
@@ -428,6 +430,13 @@ function objectiveDetector() {
     let text = $("#objective-text-original").text();
     //$("#objective").append(text);
     $.when($("#objective").prepend("<span class='granny'>👵</span>")).done(function() {
-        typeText($("#objective-text"), text, 30);
+        $(".granny").fadeIn(1500).promise().done(function() {
+            typeText($("#objective-text"), text, 30);
+            setTimeout(function() {
+                $("#objective-element").text($("#correct-element").text());
+                $("#objective-element").fadeIn(1500);
+            }, text.length * 30);
+        });
+        
     });
 }
