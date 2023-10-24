@@ -39,6 +39,42 @@
     ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 */
 
+  #wrong-element-layer {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background-color: rgba(0, 0, 0, .5);
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+  }
+
+  #wrong-element-box {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 1rem;
+    padding: 1.2rem;
+    text-wrap: pretty;
+  }
+
+  #close-wrong-element-alert {
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    border-radius: .5rem;
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(0.11turn, #c68344, #eba049);
+    align-self: flex-end;
+    -webkit-align-self: flex-end;
+  }
+
   #consent-agreement-field {
     display: none;
   }

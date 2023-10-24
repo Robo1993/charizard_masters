@@ -46,6 +46,10 @@ $(document).on('ready pjax:scriptcomplete',function(){
         }
     });
 
+    $("#close-wrong-element-alert").on("click", function() {
+        $("#wrong-element-layer").css("display", "none");
+    });
+
     $("#consent-agreement-box").on("click", function() {
         consent_given = "Y"
         $('input[id*="consentGiven"]').val("Y")
@@ -175,7 +179,7 @@ $(document).on('ready pjax:scriptcomplete',function(){
             //$("#ls-button-submit").click();
             sayThankYouGranny();
         }else {
-            alert("wrong element, check your objective if you don't remember.");
+            $("#wrong-element-layer").css("display", "flex");
             errors++;
         }
     });
