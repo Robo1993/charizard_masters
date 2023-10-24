@@ -275,12 +275,10 @@ function sayThankYouGranny() {
     var elem = $("#granny-text");
     var timeBetween = 30;
     $(".granny").css("display", "none");
-    $(".custom-next-button").css("display", "none");
 
     $(".granny").fadeIn(1500).promise().done(function() {
         typeText(elem, str, timeBetween);
         setTimeout(function() {
-            $(".custom-next-button").fadeIn(1000);
         }, str.split("").length * timeBetween);
     });
 }
