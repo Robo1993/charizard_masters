@@ -15,6 +15,7 @@ let time_end;
 let moves = 0;
 let errors = 0;
 let mobile = false;
+let time_limit_on = true;
 
 
 $(document).on('ready pjax:scriptcomplete',function(){
@@ -171,6 +172,7 @@ $(document).on('ready pjax:scriptcomplete',function(){
     $(".buy-button").on("click", function() {
         if($(this).parent().parent().find(".element-name").text().trim() == $("#correct-element").text().trim()) {
             time_end = performance.now();
+            time_limit_on = false;
             let task_time = time_end - time_start;
             $('input[id*="taskTime"]').val(task_time);
             $('input[id*="moves"]').val(moves);
@@ -231,6 +233,18 @@ function setupMobileBody() {
         time_start = performance.now();
         $("#mobile-body").css("display","flex");
         $("#main-row").css("display", "none");
+        setTimeout(function() {
+            if(time_limit_on) {
+                time_end = performance.now();
+                let task_time = time_end - time_start;
+                $('input[id*="taskTime"]').val(task_time);
+                $('input[id*="moves"]').val(moves);
+                $('input[id*="completed"]').val(0);
+                $('input[id*="errors"]').val(errors);
+                //$("#ls-button-submit").click();
+                sayTimesUpGranny();
+            }
+        }, 100000);
     }else if(questionCode.indexOf("Granny") != -1) {
         $(".question-text").css("margin-top", "20vh");
         $("#ls-button-submit").css("display","none");
@@ -276,6 +290,20 @@ function letGrannyTalk() {
 function sayThankYouGranny() {
     $("#granny-container").css("display", "flex");
     var str = "Wonderful, thank you very much!";
+    var elem = $("#granny-text");
+    var timeBetween = 30;
+    $(".granny").css("display", "none");
+
+    $(".granny").fadeIn(1500).promise().done(function() {
+        typeText(elem, str, timeBetween);
+        setTimeout(function() {
+        }, str.split("").length * timeBetween);
+    });
+}
+
+function sayTimesUpGranny() {
+    $("#granny-container").css("display", "flex");
+    var str = "I'm sorry, time's up. We need to proceed.";
     var elem = $("#granny-text");
     var timeBetween = 30;
     $(".granny").css("display", "none");
