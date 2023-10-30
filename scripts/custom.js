@@ -224,6 +224,8 @@ function setupMobileBody() {
     navigation_style = $("#current-navigation-style").text().trim();
 
     if(questionCode.indexOf("Start") != -1) {
+        const urlParams = new URLSearchParams(window.location.search);
+        const prolific_pid = urlParams.get('PROLIFIC_PID');
         localStorage.clear();
         $("#consent-agreement-field").css("display","block");
         $(".answer-container").css("display","none");
@@ -234,6 +236,8 @@ function setupMobileBody() {
         }
         $('input[id*="mobile"]').val(mobile);
         $('input[id*="screenSize"]').val($(window).width() + "x" + $(window).height());
+        $('input[id*="userAgent"]').val(navigator.userAgent);
+        $('input[id*="prolificPID"]').val(prolific_pid);
     }else if(questionCode.indexOf("Instructions") != -1) {
         $(".answer-container").css("display","none");
     }else if(questionCode.indexOf("X") != -1) {
