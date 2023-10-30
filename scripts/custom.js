@@ -169,6 +169,13 @@ $(document).on('ready pjax:scriptcomplete',function(){
         $(".hamburger-title span").text(category);
     });
 
+    $(".hamburger-list-entry").on("click", function() {
+        $(".hamburger-list-entry").each(function() {
+            $(this).css("background-color", "#fff");
+        });
+        $(this).css("background-color", "#ddd");
+    });
+
     $(".buy-button").on("click", function() {
         if($(this).parent().parent().find(".element-name").text().trim() == $("#correct-element").text().trim()) {
             time_end = performance.now();
