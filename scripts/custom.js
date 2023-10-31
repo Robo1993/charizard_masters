@@ -272,6 +272,10 @@ function setupMobileBody() {
     }else if(questionCode.indexOf("Age") != -1) {
         $('#vmsg_316_value_range').text("You have to be at least 18 years old.");
         $('#vmsg_316_value_integer').text("Only whole numbers may be entered in this field.");
+    }else if(questionCode.indexOf("ConsentGiven") != -1) {
+        $("#end-with-consent").css("display","flex");
+    }else if(questionCode.indexOf("ConsentWithhold") != -1) {
+        $("#end-without-consent").css("display","flex");
     }
 
     if(questionCode.indexOf("UEQSusability") != -1) {
