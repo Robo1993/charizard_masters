@@ -225,9 +225,9 @@ function setupMobileBody() {
 
     if(questionCode.indexOf("Start") != -1) {
         const urlParams = new URLSearchParams(window.location.search);
-        const prolific_pid = urlParams.get('PROLIFIC_PID');
+        let prolific_pid = urlParams.get('PROLIFIC_PID');
         if(prolific_pid == null) {
-            $('input[id*="prolificPID"]').val("none");
+            prolific_pid = "none";
         }
         localStorage.clear();
         $("#consent-agreement-field").css("display","block");
