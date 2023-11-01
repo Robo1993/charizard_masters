@@ -477,7 +477,7 @@ function navigationEnabler() {
 function objectiveDetector() {
     let text = $("#objective-text-original").text();
     //$("#objective").append(text);
-    $.when($("#objective").prepend("<span class='granny'>👵</span>")).done(function() {
+    $.when($("#objective").prepend("<span class='granny'>🧙</span>")).done(function() {
         $(".granny").fadeIn(1500).promise().done(function() {
             typeText($("#objective-text"), text, 30);
             setTimeout(function() {
