@@ -260,7 +260,7 @@ function setupMobileBody() {
             }
         }, 100000);
     }else if(questionCode.indexOf("Granny") != -1) {
-        $(".question-text").css("margin-top", "20vh");
+        $(".question-text").css("margin-top", "18%");
         $("#ls-button-submit").css("display","none");
         $(".answer-container").css("display","none");
         $(".question-container").css({"border":"0px", "background-color":"#fff"});
