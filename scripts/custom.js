@@ -280,8 +280,10 @@ function setupMobileBody() {
 
     if(questionCode.indexOf("UEQSusability") != -1) {
         $("#ueq-s-use").css("display","flex");
+        $(".answer-container").css("display","none");
     }else if(questionCode.indexOf("UEQShedonism") != -1) {
         $("#ueq-s-hedon").css("display","flex");
+        $(".answer-container").css("display","none");
     }
     
     checkForNavigationStyle();
