@@ -276,6 +276,8 @@ function setupMobileBody() {
         $("#end-with-consent").css("display","flex");
     }else if(questionCode.indexOf("ConsentWithhold") != -1) {
         $("#end-without-consent").css("display","flex");
+    }else if(questionCode.indexOf("EndInatentive") != -1) {
+        $("#end-inatentive").css("display","flex");
     }
 
     if(questionCode.indexOf("UEQSusability") != -1) {
