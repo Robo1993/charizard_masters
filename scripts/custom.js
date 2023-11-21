@@ -280,6 +280,10 @@ function setupMobileBody() {
         $("#end-inatentive").css("display","flex");
     }
 
+    if(questionCode.indexOf("CheckActiveReading2") != -1) {
+        $('label:contains("No answer")').parent().css("display", "none");
+    }
+
     if(questionCode.indexOf("UEQSusability") != -1) {
         $("#ueq-s-use").css("display","flex");
         $(".answer-container").css("display","none");
