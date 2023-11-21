@@ -47,6 +47,10 @@ $(document).on('ready pjax:scriptcomplete',function(){
         }
     });
 
+    $(".gender-radio-button").on("click", function() {
+        $('input[id*="gender"]').val($(this).val())
+    });
+
     $("#close-wrong-element-alert").on("click", function() {
         $("#wrong-element-layer").css("display", "none");
     });
@@ -265,10 +269,9 @@ function setupMobileBody() {
         $(".answer-container").css("display","none");
         $(".question-container").css({"border":"0px", "background-color":"#fff"});
     }else if(questionCode.indexOf("Gender") != -1) {
-        $('label:contains("No answer")').text("Other");
-        $("input[type=radio]").each(function() {
-            $(this).prop("checked", false);
-        });
+        $("#ls-button-submit").css("display","none");
+        $(".answer-container").css("display","none");
+        $("#gender-question").css("display","flex");
     }else if(questionCode.indexOf("Age") != -1) {
         $('#vmsg_316_value_range').text("You have to be at least 18 years old.");
         $('#vmsg_316_value_integer').text("Only whole numbers may be entered in this field.");

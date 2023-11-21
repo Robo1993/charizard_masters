@@ -132,6 +132,39 @@
     z-index: 99999999999999999999999999999999999999;
   }
 
+  #gender-question {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    flex-flow: column;
+    align-items: center;
+    justify-content: start;
+    row-gap: 5%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 40%;
+    text-align: justify;
+    z-index: 99999999999999999999999999999999999999;
+  }
+
+  .gender-question-option {
+    display: flex;
+    flex-flow: row;
+    justify-content: start;
+    width: 100%;
+    padding-left: 35%;
+  }
+
+  #gender-question span {
+    padding-left: 1rem;
+  }
+
+  #gender-question input {
+    transform: scale(1.5);
+  }
+
   .prolific-submit-button {
     padding: 0.5rem 1.5rem 0.5rem 1.5rem;
     border-radius: .5rem;
