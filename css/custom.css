@@ -141,7 +141,6 @@
     flex-flow: column;
     align-items: center;
     justify-content: start;
-    row-gap: 5%;
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: 40%;
@@ -155,6 +154,8 @@
     justify-content: start;
     width: 100%;
     padding-left: 35%;
+    padding-top: 3%;
+    padding-bottom: 3%;
   }
 
   #gender-question span {
@@ -162,7 +163,7 @@
   }
 
   #gender-question input {
-    transform: scale(1.5);
+    transform: scale(1.5)
   }
 
   .prolific-submit-button {
