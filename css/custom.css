@@ -143,9 +143,13 @@
     justify-content: start;
     padding-left: 2rem;
     padding-right: 2rem;
-    padding-top: 40%;
+    padding-top: 20%;
     text-align: justify;
     z-index: 99999999999999999999999999999999999999;
+  }
+  .spacer {
+    width: 100%;
+    height: 2rem;
   }
 
   .gender-question-option {
