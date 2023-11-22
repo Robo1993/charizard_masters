@@ -285,6 +285,7 @@ function setupMobileBody() {
 
     if(questionCode.indexOf("CheckActiveReading2") != -1) {
         $('label:contains("No answer")').parent().css("display", "none");
+        $('.ls-question-message').css("display", "none");
     }
 
     if(questionCode.indexOf("UEQSusability") != -1) {
